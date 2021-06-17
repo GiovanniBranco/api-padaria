@@ -24,4 +24,13 @@ public class ClienteRepository {
 		this.clientes.add(cliente);
 		return cliente;
 	}
+	
+	public Cliente findById(Long id) {
+		for (Cliente cliente : clientes) {
+			if(cliente.getId().equals(id)) {
+				return cliente;
+			}
+		}
+		return null;
+	}
 }

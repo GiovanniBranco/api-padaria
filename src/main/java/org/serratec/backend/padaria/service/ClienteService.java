@@ -13,8 +13,12 @@ public class ClienteService {
 	@Autowired
 	ClienteRepository repository;
 	
-	public List<Cliente> obterProdutos(){
+	public List<Cliente> obterClientes(){
 		return repository.obterTodos();
+	}
+	
+	public Cliente getById(Long id) {
+		return repository.findById(id);
 	}
 	
 	public Cliente adicionar(Cliente cliente) {

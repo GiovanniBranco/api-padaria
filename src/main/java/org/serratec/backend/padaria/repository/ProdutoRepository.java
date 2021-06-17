@@ -24,4 +24,13 @@ public class ProdutoRepository {
 		this.produtos.add(produto);
 		return produto;
 	}
+	
+	public Produto findById(Long id) {
+		for (Produto produto : produtos) {
+			if(produto.getId().equals(id)) {
+				return produto;
+			}
+		}
+		return null;
+	}
 }

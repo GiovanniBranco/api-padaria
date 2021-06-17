@@ -28,6 +28,11 @@ public class ProdutoController {
 		return new ResponseEntity<List<Produto>>(service.obterProdutos(), HttpStatus.OK);
 	}
 	
+	@GetMapping("/{id}")
+	public ResponseEntity<Produto> getById(Long id){
+		return new ResponseEntity<Produto>(service.getById(id), HttpStatus.OK);
+	}
+	
 	@PostMapping
 	public ResponseEntity<Produto> adicionarProduto(@RequestBody Produto produto) {
 		return new ResponseEntity<Produto>(service.adicionar(produto), HttpStatus.CREATED);

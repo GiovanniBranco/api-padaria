@@ -20,4 +20,8 @@ public class ProdutoService {
 	public Produto adicionar(Produto produto) {
 		return repository.adicionar(produto);
 	}
+	
+	public Produto getById(Long id) {
+		return repository.findById(id);
+	}
 }

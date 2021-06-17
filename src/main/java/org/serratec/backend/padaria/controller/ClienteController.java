@@ -24,7 +24,12 @@ public class ClienteController {
 	
 	@GetMapping
 	public ResponseEntity<List<Cliente>> listarProdutos(){
-		return new ResponseEntity<List<Cliente>>(service.obterProdutos(), HttpStatus.OK);
+		return new ResponseEntity<List<Cliente>>(service.obterClientes(), HttpStatus.OK);
+	}
+	
+	@GetMapping("/{id}")
+	public ResponseEntity<Cliente> getById(Long id){
+		return new ResponseEntity<Cliente>(service.getById(id), HttpStatus.OK);
 	}
 	
 	@PostMapping
