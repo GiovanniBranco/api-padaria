@@ -1,6 +1,7 @@
 package org.serratec.backend.padaria.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.serratec.backend.padaria.model.Produto;
 import org.serratec.backend.padaria.repository.ProdutoRepository;
@@ -21,7 +22,7 @@ public class ProdutoService {
 		return repository.adicionar(produto);
 	}
 	
-	public Produto getById(Long id) {
+	public Optional<Produto> getById(Long id) {
 		return repository.findById(id);
 	}
 }

@@ -1,6 +1,7 @@
 package org.serratec.backend.padaria.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.serratec.backend.padaria.model.Produto;
 import org.serratec.backend.padaria.service.ProdutoService;
@@ -30,8 +31,8 @@ public class ProdutoController {
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Produto> getById(@PathVariable Long id){
-		return new ResponseEntity<Produto>(service.getById(id), HttpStatus.OK);
+	public ResponseEntity<Optional<Produto>> getById(@PathVariable Long id){
+		return new ResponseEntity<Optional<Produto>>(service.getById(id), HttpStatus.OK);
 	}
 	
 	@PostMapping

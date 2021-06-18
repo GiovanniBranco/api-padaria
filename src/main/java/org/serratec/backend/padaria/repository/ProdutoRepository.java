@@ -2,6 +2,7 @@ package org.serratec.backend.padaria.repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.serratec.backend.padaria.model.Produto;
 import org.springframework.stereotype.Repository;
@@ -25,10 +26,10 @@ public class ProdutoRepository {
 		return produto;
 	}
 	
-	public Produto findById(Long id) {
+	public Optional<Produto> findById(Long id) {
 		for (Produto produto : produtos) {
 			if(produto.getId().equals(id)) {
-				return produto;
+				return Optional.of(produto);
 			}
 		}
 		return null;
